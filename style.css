@@ -1,0 +1,505 @@
+/* Resetter */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+
+:root {
+
+  /* LIGHT THEME */
+  --color-darkest:#FCA333;
+  --color-dark: #FFB14C;
+  --color-light: #FEC665;
+  --color-lighter: #FFE762;
+  --color-green:rgb(36, 146, 60);
+  --color-active: #32b0e4;
+  --color-ctas: #84d5b0;
+  
+
+  /* DARK THEME */
+  /* --darkmode-darkest:#333a62;
+  --darkmode-dark: #242946;
+  --darkmode-light: rgb(243, 243, 243);
+  --darkmode-lighter: #e7eefb;
+  --darkmode-active: #32b0e4;
+  --darkmode-ctas: #84d5b0; */
+
+  /* OTHERS */
+
+  --black: #303030;
+  --stayblack: #303030;
+  --staywhite: #f0f0f0;
+  --white: #f0f0f0;
+  --background: #E6F9FF;
+  --header: #bbdce6;
+  --usedfont: 'Work Sans', sans-serif;
+
+
+  /* you could add an accent color for CTAs and anchor tags ;-) */
+}
+
+
+.dark-mode{
+  --color-darkest:#1f224e;
+  --color-dark: #FFE546;
+  --color-light: #5165a4;
+  --color-lighter: #4D5594;
+  --color-green:rgb(129, 183, 141);
+  --color-active: #FFE546;
+  --background: #414988;
+  --header:#1f224e;
+  --black: #f0f0f0;
+  --white: #1b1c1e;
+ 
+}
+
+/* Fonts */
+
+h1,
+h2,
+h3 {
+  color: var(--black);
+  font-family: var(--usedfont);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+p {
+  color: var(--black);
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-family: var(--usedfont);
+}
+
+a {
+  font-family: var(--usedfont);
+  text-decoration: none;
+  color: var(--black);
+}
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* UI Elements */
+button {
+  display: inline-block;
+  height: 3rem;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-darkest);
+  color: var(--staywhite);
+}
+
+.nav_button {
+  /* background-color: var(--active-ctas); */
+  border: 1.5px solid var(--background);
+  color: var(--white);
+  max-width: 10rem;
+}
+
+.CTA_button {
+  /* background-color: var(--active-ctas); */
+  border: 1.5px solid var(--color-dark);
+  color: var(--color-dark);
+  max-width: 10rem;
+}
+
+.CTA-btn, .header-btn{
+  display: block;
+  width: 10rem;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: var(--staywhite);
+  font-family: "Mukta", sans-serif;
+  
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+.CTA-btn{
+
+  
+  color: var(--color-dark);
+  
+}
+
+.CTA-btn span, .header-btn span{
+  position: relative;
+  z-index: 2;
+}
+
+.CTA-btn::after, .header-btn::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-dark);
+  transition: all .35s;
+}
+
+.CTA-btn:hover, .header-btn:hover{
+  color: var(--white);
+}
+
+.CTA-btn:hover::after, .header-btn:hover::after{
+  width: 100%;
+}
+
+.dark_button {
+  background-color: var(--color-darkest);
+
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 250px;
+  height: 3rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  text-align: left;
+  background-color: #eee;
+  border-color: #ddd;
+  color: #222;
+}
+
+/* Menu */
+nav{
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a.logo {
+  font-size: 1.25rem;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0px 1rem;
+}
+
+
+/* SWITCH SLIDER */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+ /* Hide checkbox  */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* checkbox slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(250, 250, 250);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#checkbox:checked + .slider {
+  background-color: #cecece;
+}
+
+#checkbox:focus + .slider {
+  box-shadow: 0 0 1px #c2c9cf;
+}
+
+#checkbox:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+ /* Round corners on checkbox  */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+/* Header */
+header {
+  display: flex;
+  min-height: 80vh;
+  padding: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--background);
+}
+
+header h1 {
+  color: var(--black);
+}
+
+header p {
+  color: var(--black);
+}
+
+header button {
+  margin-bottom: 5rem;
+}
+
+.header_text {
+  width: 30vw;
+  min-width: 300px;
+}
+
+.sun_graphics {
+  /* width: 30vw;
+  height: 30vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 300px; */
+  width: 250px;
+  height:250px;
+
+  background-color: var(--color-dark);
+}
+
+.sun_graphics::before, .sun_graphics::after{
+  content: "";
+  position: absolute;
+  top: 4;
+  left: 4;
+  height: 250px;
+  width: 250px;
+  background: var(--color-dark);
+
+}
+
+.sun_graphics::before{
+  transform: rotate(30deg);
+}
+.sun_graphics::after{
+  transform: rotate(60deg);
+}
+
+.moon_graphics{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: -100px;
+  left: -100px;
+  border-radius: 50%;
+  box-shadow: 60px 60px 0 0 var(--color-dark);
+}
+
+/* product section */
+#product {
+  padding: 2rem;
+  background-color: var(--background);
+}
+
+#product h3 {
+  font-size: 1.953rem;
+  line-height: 2.5rem;
+}
+
+#product article {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product_text {
+  width: 50vw;
+  min-width: 300px;
+}
+
+/* .product_graphics {
+  width: 15vw;
+  height: 15vw;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 3rem;
+  background-color: var(--lightmode-dark);
+  border-radius: 300px;
+} */
+
+.product_sun_graphics {
+  /* width: 30vw;
+  height: 30vw;
+  min-width: 300px;
+  min-height: 300px;
+  border-radius: 300px; */
+  width: 15vw;
+  height:15vw;
+  min-width: 150px;
+  min-height: 150px;
+
+  background-color: var(--color-dark);
+}
+
+.product_sun_graphics::before, .product_sun_graphics::after{
+  content: "";
+  position: absolute;
+  top: 4;
+  left: 4;
+  height: 15vw;
+  width: 15vw;
+  background: var(--color-dark);
+
+}
+
+.product_sun_graphics::before{
+  transform: rotate(30deg);
+}
+.product_sun_graphics::after{
+  transform: rotate(60deg);
+}
+
+.small_moon_graphics{
+  width: 15vw;
+  height: 15vw;
+  position: relative;
+  top: -50px;
+  left: -50px;
+  border-radius: 50%;
+  box-shadow: 30px 30px 0 0 var(--color-dark);
+}
+
+/* highlight sections */
+.highlight {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-light);
+}
+
+.highlight div {
+  width: 80vw;
+}
+
+.highlight div h2 {
+  font-size: 2.052rem;
+  line-height: 4rem;
+}
+
+.dark {
+  background-color: var(--header);
+}
+
+.dark h2 {
+  color: var(--black);
+}
+
+.dark a {
+  color: var(--black);
+} 
+
+/* request section */
+#request {
+  display: flex;
+  min-height: 50vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-green);
+}
+
+#request div {
+  width: 50vw;
+  min-width: 450px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  padding: 5vh 2rem;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--stayblack);
+  color: #ddd;
+}
+
+footer h2, footer h3 {
+  color: var(--staywhite);
+}
+
+footer a {
+  color: var(--staywhite);
+}
+
+footer section.left {
+  display: flex;
+  max-width: 50vw;
+  align-items: top;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer section div {
+  margin: 0px 1rem 1rem 1rem;
+}
+
+
+
+
